@@ -6,7 +6,7 @@ int factorial(int num)
     if (num == 0 || num == 1)
         return 1; // Base Case
     else
-        return num * factorial(num - 1); // General Case
+        return num * factorial(num - 1); // General or Recursive Case
 }
 
 /*
