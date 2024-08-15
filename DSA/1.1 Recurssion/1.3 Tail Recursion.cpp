@@ -19,7 +19,11 @@ Recursive Case:
 Tail Recursion:
 - The recursive call is the last operation performed within the function.
 - This makes it a tail-recursive function.
-- Tail recursion can be optimized by the compiler, as it doesn’t require additional stack space for each recursive call.
+- Tail recursion can be optimized by the compiler, as it doesn’t requir
+void infiniteRecursion() {
+    infiniteRecursion();  // No base case
+}
+e additional stack space for each recursive call.
 */
 
 int tailRecursion(int n, int accumulator)
