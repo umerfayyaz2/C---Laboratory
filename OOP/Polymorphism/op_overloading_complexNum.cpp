@@ -18,8 +18,8 @@ public:
     // Pre and Postfix ++ Operator Overloading
     ComplexNumber operator++()
     {
-        ++real; // prefix
-        return *this;
+        ++real;       // prefix
+        return *this; // returns current object
     }
 
     ComplexNumber operator++(int) // here int is a dummy param for Post-fix to distinguish it form Pre-fix
@@ -64,12 +64,12 @@ public:
 
     ComplexNumber operator/(const ComplexNumber &other) const
     {
-        double denom = other.real * other.real + other.imag * other.imag;
+        double denominator = other.real * other.real + other.imag * other.imag;
 
         return ComplexNumber(
 
-            (real * other.real + imag * other.imag) / denom,
-            (real * other.real - imag * other.imag) / denom);
+            (real * other.real + imag * other.imag) / denominator,
+            (real * other.real - imag * other.imag) / denominator);
     }
 
     // Compound Assignment Operators
@@ -101,9 +101,9 @@ public:
 
     ComplexNumber operator/=(const ComplexNumber &other)
     {
-        double denom = other.real * other.real + other.imag * other.imag;
-        double r = (real * other.real + imag * other.imag) / denom;
-        double i = (real * other.real + imag * other.imag) / denom;
+        double denominator = other.real * other.real + other.imag * other.imag;
+        double r = (real * other.real + imag * other.imag) / denominator;
+        double i = (real * other.real + imag * other.imag) / denominator;
 
         real = r, imag = i;
 
