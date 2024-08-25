@@ -15,7 +15,7 @@ double power_function(int base, int exponent)
         return base * power_function(base, exponent - 1);
     }
 
-    // if the exponent is negative
+    // if the exponent is negative the function calls itself with the positive version of the exponent and then returns the reciprocal.
     if (exponent < 0)
     {
         return 1.0 / power_function(base, -exponent);
