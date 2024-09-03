@@ -5,7 +5,7 @@ struct nodeType
 {
     int value;
     nodeType *next;
-    nodeType(int x) : value(x), next(NULL) {}
+    nodeType(int x) : value(x), next(nullptr) {}
 };
 
 int find_middle_node(nodeType *head)
@@ -13,7 +13,7 @@ int find_middle_node(nodeType *head)
     nodeType *slow = head;
     nodeType *fast = head;
 
-    while (fast != NULL && fast->next != NULL)
+    while (fast != nullptr && fast->next != nullptr)
     {
         slow = slow->next;
         fast = fast->next->next;
@@ -28,7 +28,7 @@ struct nodeType
 {
     int value;
     nodeType *next;
-    nodeType(int x) : value(x), next(NULL) {}
+    nodeType(int x) : value(x), next(nullptr) {}
 };
 
 int ind_middle_node(nodeType *head)
@@ -36,7 +36,7 @@ int ind_middle_node(nodeType *head)
     nodeType *slow = head;
     nodeType *fast = head;
 
-    while (fast != NULL && fast->next != NULL)
+    while (fast != nullptr && fast->next != nullptr)
     {
         slow = slow->next;
         fast = fast->next->next;
