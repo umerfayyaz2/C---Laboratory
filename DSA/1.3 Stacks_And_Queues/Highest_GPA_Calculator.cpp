@@ -71,3 +71,30 @@ void findHighestGPA(vector<StudentType> &students)
         cout << student.getName() << endl;
     }
 }
+
+int main()
+{
+    int numStudents = 7;          // Number of students (can be modified)
+    vector<StudentType> students; // Vector to store all students
+
+    // Input the GPA and name of students
+    cout << "Enter GPA and student name (Example: 3.8 Ron):\n";
+    for (int i = 0; i < numStudents; i++)
+    {
+        double GPA;
+        string name;
+
+        cin >> GPA;         // Input GPA
+        cin.ignore();       // To ignore any newline after GPA input
+        getline(cin, name); // Input student name
+
+        // Create a new student and add to the vector
+        StudentType student(GPA, name);
+        students.push_back(student);
+    }
+
+    // Find and display the students with the highest GPA
+    findHighestGPA(students);
+
+    return 0;
+}
