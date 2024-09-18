@@ -5,29 +5,29 @@
 
 using namespace std;
 
-// Define the StudentType class
-class StudentType
+// Define the student_type class
+class student_type
 {
 private:
-    double GPA;
+    double gpa;
     string name;
 
 public:
     // Constructor to initialize a student's GPA and name
-    StudentType(double gpa, string studentName)
+    student_type(double gpa_value, string student_name)
     {
-        GPA = gpa;
-        name = studentName;
+        gpa = gpa_value;
+        name = student_name;
     }
 
     // Getter function to retrieve the student's GPA
-    double getGPA() const
+    double get_gpa() const
     {
-        return GPA;
+        return gpa;
     }
 
     // Getter function to retrieve the student's name
-    string getName() const
+    string get_name() const
     {
         return name;
     }
@@ -35,66 +35,66 @@ public:
     // Function to display the student's data
     void display() const
     {
-        cout << "Name: " << name << ", GPA: " << fixed << setprecision(2) << GPA << endl;
+        cout << "Name: " << name << ", GPA: " << fixed << setprecision(2) << gpa << endl;
     }
 };
 
 // Function to find and display students with the highest GPA
-void findHighestGPA(vector<StudentType> &students)
+void find_highest_gpa(vector<student_type> &students)
 {
-    double highestGPA = 0.0;
-    vector<StudentType> highestGPAStudents;
+    double highest_gpa = 0.0;
+    vector<student_type> highest_gpa_students;
 
     for (const auto &student : students)
     {
-        double currentGPA = student.getGPA();
+        double current_gpa = student.get_gpa();
 
         // Case 1: New highest GPA found
-        if (currentGPA > highestGPA)
+        if (current_gpa > highest_gpa)
         {
-            highestGPA = currentGPA;
-            highestGPAStudents.clear();            // Reset the vector
-            highestGPAStudents.push_back(student); // Add current student
+            highest_gpa = current_gpa;
+            highest_gpa_students.clear();            // Reset the vector
+            highest_gpa_students.push_back(student); // Add current student
         }
         // Case 2: Same GPA as the highest GPA so far
-        else if (currentGPA == highestGPA)
+        else if (current_gpa == highest_gpa)
         {
-            highestGPAStudents.push_back(student); // Add current student
+            highest_gpa_students.push_back(student); // Add current student
         }
     }
 
     // Output the highest GPA and associated students
-    cout << "\nThe highest GPA is: " << fixed << setprecision(2) << highestGPA << endl;
+    cout << "\nThe highest GPA is: " << fixed << setprecision(2) << highest_gpa << endl;
     cout << "Students with the highest GPA:\n";
-    for (const auto &student : highestGPAStudents)
+    for (const auto &student : highest_gpa_students)
     {
-        cout << student.getName() << endl;
+        cout << student.get_name() << endl;
     }
 }
 
 int main()
 {
-    int numStudents = 7;          // Number of students (can be modified)
-    vector<StudentType> students; // Vector to store all students
+    int num_students = 7;          // Number of students (can be modified)
+    vector<student_type> students; // Vector to store all students
 
     // Input the GPA and name of students
-    cout << "Enter GPA and student name (Example: 3.8 Ron):\n";
-    for (int i = 0; i < numStudents; i++)
+    cout << "Enter GPA and student name:\n";
+    for (int i = 0; i < num_students; i++)
     {
-        double GPA;
+        double gpa;
         string name;
 
-        cin >> GPA;         // Input GPA
+        cin >> gpa;         // Input GPA
         cin.ignore();       // To ignore any newline after GPA input
         getline(cin, name); // Input student name
 
         // Create a new student and add to the vector
-        StudentType student(GPA, name);
+        student_type student(gpa, name);
         students.push_back(student);
     }
 
     // Find and display the students with the highest GPA
-    findHighestGPA(students);
+    find_highest_gpa(students);
 
     return 0;
 }
