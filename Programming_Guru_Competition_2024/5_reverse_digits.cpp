@@ -3,7 +3,7 @@ using namespace std;
 
 int reverse_number(int num)
 {
-    int reveresed = 0;
+    int reveresed = 0; // this will store the reversed number
 
     while (num != 0)
     {
