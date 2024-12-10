@@ -2,18 +2,16 @@
 
 void insertion_sort(int arr[], int size)
 {
-    for (int curr = 1; curr < size; curr++) // curr index starts from the second elem
+    for (int curr_index = 1; curr_index < size; curr_index++)
     {
-        int key = arr[curr]; // the key is our curr indexed elem
-        int prev = curr - 1; // prev is the index before curr
+        int key = arr[curr_index];
+        int prev_index = curr_index - 1;
 
-        while (prev >= 0 && arr[prev] > key)
+        while (prev_index >= 0 && arr[prev_index] > key)
         {
-            arr[prev + 1] = arr[prev];
-            prev = prev - 1; // base case
+            arr[prev_index + 1] = arr[prev_index];
+            prev_index--; // this will move to prev idex
         }
-
-        // Insert the key at the correct position
-        arr[prev + 1] = key;
+        arr[prev_index + 1] = key;
     }
 }
