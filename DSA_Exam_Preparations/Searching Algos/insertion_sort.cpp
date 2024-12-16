@@ -10,7 +10,7 @@ void insertion_sort(int arr[], int size)
         while (prev_index >= 0 && arr[prev_index] > key)
         {
             arr[prev_index + 1] = arr[prev_index];
-            prev_index--; // this will move to prev idex
+            prev_index--; // this will move to prev index
         }
         arr[prev_index + 1] = key;
     }
