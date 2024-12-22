@@ -16,7 +16,7 @@ void merge_func(int arr[], int start, int mid, int end)
         else
         {
             temp_arr[index] = arr[right];
-            index++, right++;
+            index++, --right++;
         }
     }
 

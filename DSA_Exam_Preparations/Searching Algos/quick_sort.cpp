@@ -10,6 +10,7 @@ int partition_func(int arr[], int start, int end)
         if (arr[i] <= arr[end])
         {
             swap(arr[i], arr[pos]);
+            pos++;
         }
     }
     return pos - 1;
