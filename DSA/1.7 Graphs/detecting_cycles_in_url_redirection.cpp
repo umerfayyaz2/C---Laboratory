@@ -4,6 +4,7 @@
 #include <stack>
 using namespace std;
 
+// Url graph
 class URLGraph
 {
 private:
