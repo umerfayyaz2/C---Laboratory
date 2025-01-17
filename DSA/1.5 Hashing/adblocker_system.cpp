@@ -10,7 +10,7 @@ private:
     unordered_set<string> blockedURLs; // Set to store blocked URLs/domains
 
 public:
-    // Function to add a URL or domain to the blocked list
+    // Function to add a URL or domain into the blocked list
     void blockURL(const string &url)
     {
         blockedURLs.insert(url);
